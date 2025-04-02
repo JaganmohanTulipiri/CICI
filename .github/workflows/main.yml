@@ -23,7 +23,10 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm ci
+
+      - name: Install missing dependencies
+        run: npm install ajv
 
       - name: Build project
         run: DISABLE_ESLINT_PLUGIN=true npm run build
