@@ -1,0 +1,44 @@
+name: Deploy React App
+
+on:
+  push:
+    branches:
+      - main  # Change this to your deployment branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H 172.214.136.241 >> ~/.ssh/known_hosts
+
+      - name: Ensure target directory exists
+        run: |
+          ssh -i ~/.ssh/deploy_key azureuser@172.214.136.241 "sudo mkdir -p /var/www/html/react-app && sudo chown -R azureuser:azureuser /var/www/html/react-app && sudo chmod -R 775 /var/www/html/react-app"
+
+      - name: Copy files to server
+        run: |
+          scp -i ~/.ssh/deploy_key -r build/* azureuser@172.214.136.241:/var/www/html/react-app/
+
+      - name: Restart Nginx
+        run: |
+          ssh -i ~/.ssh/deploy_key azureuser@172.214.136.241 "sudo systemctl restart nginx"
