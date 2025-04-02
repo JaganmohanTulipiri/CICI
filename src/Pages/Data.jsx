@@ -6,8 +6,8 @@ export const homeObjOne1 = {
   lightText: true,
   lightTextDesc: true,
   buttonLabel: "Get Started",
-  topLine: "Marketing Agency",
-  headline: "Lead Generation Specialist for Online Business",
+  topLine: "JMR Marketing Agency",
+  headline: "JaganJMR",
   description:
     "We help business owners increase their revenue. Our team of unique specialist can help you acheive your business goals.",
   start: "",
