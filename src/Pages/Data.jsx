@@ -6,7 +6,7 @@ export const homeObjOne1 = {
   lightText: true,
   lightTextDesc: true,
   buttonLabel: "Get Started",
-  topLine: "Marketing Agency",
+  topLine: "JAGAN Marketing Agency",
   headline: "Lead Generation Specialist for Online Business",
   description:
     "We help business owners increase their revenue. Our team of unique specialist can help you acheive your business goals.",
@@ -22,7 +22,7 @@ export const homeObjOne2 = {
   lightText: false,
   lightTextDesc: false,
   buttonLabel: "Get Started",
-  topLine: "Marketing Agency",
+  topLine: "JAGAN Marketing Agency",
   headline: "Lead Generation Specialist for Online Business",
   description:
     "We help business owners increase their revenue. Our team of unique specialist can help you acheive your business goals.",
@@ -38,7 +38,7 @@ export const homeObjOne3 = {
   lightText: true,
   lightTextDesc: true,
   buttonLabel: "Get Started",
-  topLine: "Marketing Agency",
+  topLine: "JAGAN Marketing Agency",
   headline: "Lead Generation Specialist for Online Business",
   description:
     "We help business owners increase their revenue. Our team of unique specialist can help you acheive your business goals.",
@@ -55,7 +55,7 @@ export const homeObjOne4 = {
   lightText: false,
   lightTextDesc: false,
   buttonLabel: "Get Started",
-  topLine: "Marketing Agency",
+  topLine: "JAGAN Marketing Agency",
   headline: "Lead Generation Specialist for Online Business",
   description:
     "We help business owners increase their revenue. Our team of unique specialist can help you acheive your business goals.",
